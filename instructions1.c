@@ -62,7 +62,8 @@ void pint(stack_t **head, unsigned int line_number)
 		free_stack(*head), fclose(fileopen);
 		exit(EXIT_FAILURE);
 	}
-	fprintf(stdout, "%d\n", (*head)->n);
+	else
+		fprintf(stdout, "%d\n", (*head)->n);
 }
 
 /**
