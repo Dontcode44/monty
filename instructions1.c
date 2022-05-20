@@ -59,7 +59,7 @@ void pint(stack_t **head, unsigned int line_number)
 	if (!head || !*head)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		free_stack(head), fclose(fileopen);
+		free_stack(*head), fclose(fileopen);
 		exit(EXIT_FAILURE);
 	}
 	fprintf(stdout, "%d\n", (*head)->n);
@@ -73,6 +73,6 @@ void pint(stack_t **head, unsigned int line_number)
  */
 void nop(stack_t **head, unsigned int line_number)
 {
-	(void)(**head);
-	(void)(line_number);
+	(void)head;
+	(void)line_number;
 }
