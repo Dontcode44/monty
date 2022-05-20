@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/hector/monty'
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o monty
+make: Leaving directory '/home/hector/monty'
+ 
