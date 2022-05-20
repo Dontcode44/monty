@@ -56,10 +56,10 @@ void pall(stack_t **head, unsigned int line_number)
  */
 void pint(stack_t **head, unsigned int line_number)
 {
-	if (!head || !*head)
+	if (!*head || !head)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		free_stack(*head), fclose(fileopen);
+		free_stack(head), fclose(fileopen);
 		exit(EXIT_FAILURE);
 	}
 	else
