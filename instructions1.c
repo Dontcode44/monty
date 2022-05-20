@@ -54,16 +54,16 @@ void pall(stack_t **head, unsigned int line_number)
  * @line_number: line number of the file.
  * Return: nothing.
  */
-void pint(stack_t **head, unsigned int line_number)
+void pint(stack_t **stack, unsigned int line_number)
 {
-	if (!*head || !head)
+	if (!*stack || !stack)
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		free_stack(*head), fclose(fileopen);
+		dprintf(STDERR_FILENO, "L%d: can't pint, stack empty\n", line_number);
+		free_stack(stack), fclose(fileopen);
 		exit(EXIT_FAILURE);
 	}
 	else
-		fprintf(stdout, "%d\n", (*head)->n);
+		dprintf(STDOUT_FILENO, "%d\n", (*stack)->n);
 }
 
 /**
