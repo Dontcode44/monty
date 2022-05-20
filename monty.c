@@ -11,6 +11,7 @@ FILE *fileopen = NULL;
 int main(int argc, char *argv[])
 {
 	char *monty_file = NULL;
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
