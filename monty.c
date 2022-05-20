@@ -12,14 +12,13 @@ int main(int argc, char *argv[])
 {
 	char *fileopen = NULL;
 
-	/*Checks number of arguments*/
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
-	fileopen = open_file(fileopen, argv);
+	fileopen = fopen(fileopen, argv);
 	lines (fileopen);
 
 	fclose(fileopen);

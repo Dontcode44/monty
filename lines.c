@@ -26,7 +26,5 @@ FILE *lines(FILE *fileopen)
 
 		line_number++;
 	}
-	free_stack(head);
-
 	return (fileopen);
 }

@@ -9,7 +9,7 @@
 FILE *open_file(char *monty_file, char *argv[])
 {
 	monty_file = argv[1];
-	fileopen = fopen(monty_file, 'r');
+	fileopen = fopen(monty_file, "r");
 	if (!fileopen)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", monty_file);
