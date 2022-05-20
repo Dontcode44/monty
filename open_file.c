@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * file_to_open - Open a monty file from main arguments.
+ * open_file - Open a monty file from main arguments.
  * @monty_file: file to open.
  * @argv: arguments passed to main.
  * Return: the file opened.

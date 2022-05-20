@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * parse_line - Parse each line of the monty file.
+ * lines - Parse each line of the monty file.
  * @monty_data: monty file to parse.
  * Return: last line number on the monty file opened.
  */
@@ -21,8 +21,14 @@ FILE *lines(FILE *openfile)
 			continue;
 		}
 		get_opcode = get_func(token);
+		if (get_opcode == NULL)
+		{
+			fprintf(stderr,"L%d: unknown instruction %s\n", line_number, token);
+			free_stack(head);
+			fclose(fileopen);
+			exit(EXIT_FAILURE);
+		}
 		get_opcode(&head, line_number);
-
 
 		line_number++;
 	}
