@@ -1,26 +1,28 @@
 #include "monty.h"
 
 /**
- * get_func - Search the operator
- * @stack: Stack
- * @lne_number: Line number
- * Return: Success!
+ * get_func - Select the opcode to execute.
+ * @opcode: instruction to execute.
+ * Return: no return.
  */
-
 void (*get_func(char *opcode))(stack_t **stack, unsigned int line_number)
 {
-	instruction_t list[] = {
-		{"push", _push}, {"pall", _pall}, {NULL, NULL}};
+	instruction_t op_list[] = {
+		{"push", push}, {"pall", pall},
+		{NULL, NULL}
+	};
 
 	int i = 0;
 
 	if (!opcode)
 		return (NULL);
 
-	while (!list[i])
+	while (op_list[i].opcode)
 	{
-		if (strcmp(opcode, list == 0))
-			return (list[i]);
+		if (strcmp(opcode, op_list[i].opcode) == 0)
+			return (op_list[i].f);
 		i++;
 	}
+
+	return (NULL);
 }

@@ -1,25 +1,32 @@
 #include "monty.h"
 /**
- * lines - tokenize the string
- * @fileopen: file
- *Return: Success!
+ * parse_line - Parse each line of the monty file.
+ * @monty_data: monty file to parse.
+ * Return: last line number on the monty file opened.
  */
-char *buffer;
-unsigned int line_number = 1;
-void (*get_opcode)(stack_t **, unsigned int);
-stack_t *current_stack = NULL;
-char *token = NULL;
-
-FILE lines(FILE *fileopen)
+FILE *lines(FILE *openfile)
 {
-	while (fgets(buffer, sizeof(buffer), fileopen) != NULL)
+	char *token = NULL;
+	char buffer[BUFSIZ];
+	unsigned int line_number = 1;
+	stack_t *head = NULL;
+	void (*get_opcode)(stack_t **, unsigned int);
+
+	while (fgets(buffer, sizeof(buffer), openfile) != NULL)
 	{
 		token = strtok(buffer, DELIM);
-		if (!token)
-			fprintf("L %s: unknown instruction %s\n", line_number, token);
-		get_opcode = get_func(token[0]);
-		get_opcode(current_stack, line_number);
+		if (!token || token[0] == '#')
+		{
+			line_number++;
+			continue;
+		}
+		get_opcode = get_func(token);
+		get_opcode(&head, line_number);
+
+
 		line_number++;
 	}
-	return (*fileopen);
+	free_stack(head);
+
+	return (fileopen);
 }

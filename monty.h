@@ -2,10 +2,16 @@
 #define MONTY_H
 #define DELIM " \n\t"
 
+#include <unistd.h>
+#include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include <sys/types.h>
+#include <string.h>
+#include <ctype.h>
 
-extern char *fileopen;
+extern FILE *fileopen;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -37,9 +43,13 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+FILE *lines(FILE *fileopen);
 int main(int argc, char *argv[]);
 void push(stack_t **stack, unsigned int line_number);
-void free_stack(stack_t **stack);
+void free_stack(stack_t *stack);
 void pall(stack_t **stack, unsigned int lines);
-
+void (*get_func(char *opcode))(stack_t **stack, unsigned int line_number);
+int is_digit(char *string);
+stack_t *add_new_node(stack_t **head, int data_node);
+FILE *open_file(char *monty_file, char *argv[]);
 #endif
