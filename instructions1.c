@@ -85,18 +85,20 @@ void nop(stack_t **stack, unsigned int line_number)
  */
 void pop(stack_t **head, unsigned int line_number)
 {
-	stack_t *ptr = *head;
-	(void)line_number;
-
-	if (*head == NULL)
-		return;
-	if ((*head)->next == NULL)
+	if (head == NULL || *head == NULL)
 	{
-		free(ptr);
-		*head = NULL;
-		return;
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
 	}
-	*head = (*head)->next;
-	(*head)->prev = NULL;
-	free(ptr);
+	if ((*head)->next != NULL)
+	{
+		*head = (*head)->next;
+		free((*head)->prev);
+		(*head)->prev = NULL;
+	}
+	else
+	{
+		free(*head);
+		*head = NULL;
+	}
 }
