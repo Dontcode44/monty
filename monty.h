@@ -52,7 +52,7 @@ void (*get_func(char *opcode))(stack_t **stack, unsigned int line_number);
 int is_digit(char *string);
 stack_t *add_new_node(stack_t **head, int data_node);
 FILE *open_file(char *monty_file, char *argv[]);
-void pint(stack_t **head, unsigned int line_number);
-void nop(stack_t **head, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 
 #endif

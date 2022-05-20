@@ -72,8 +72,8 @@ void pint(stack_t **head, unsigned int line_number)
  * @line_number: line number of the file.
  * Return: nothing.
  */
-void nop(stack_t **head, unsigned int line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
-	(void)head;
+	(void)stack;
 	(void)line_number;
 }
