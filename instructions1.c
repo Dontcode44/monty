@@ -58,9 +58,8 @@ void pint(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack || !stack)
 	{
-		free_stack(*stack);
-		fclose(fileopen);
 		dprintf(STDERR_FILENO, "L%d: can't pint, stack empty\n", line_number);
+		free_stack(*stack), fclose(fileopen);
 		exit(EXIT_FAILURE);
 	}
 	else
@@ -77,4 +76,27 @@ void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
+}
+/**
+ * pop - Function pop
+ * @head:
+ * @line_number:
+ *  *
+ */
+void pop(stack_t **head, unsigned int line_number)
+{
+	stack_t *ptr = *head;
+	(void)line_number;
+
+	if (*head == NULL)
+		return;
+	if ((*head)->next == NULL)
+	{
+		free(ptr);
+		*head = NULL;
+		return;
+	}
+	*head = (*head)->next;
+	(*head)->prev = NULL;
+	free(ptr);
 }
