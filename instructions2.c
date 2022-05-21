@@ -72,11 +72,11 @@ void _mul(stack_t **head, unsigned int line_number)
 	(*head)->prev = NULL;
 }
 /**
- * div - divide second node from top node
+ * _div - divide second node from top node
  * @head: top of list
  * @line_number: line of command
  */
-void div(stack_t **head, unsigned int line_number)
+void _div(stack_t **head, unsigned int line_number)
 {
 	stack_t *tmp;
 
