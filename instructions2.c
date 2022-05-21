@@ -93,5 +93,5 @@ void _div(stack_t **head, unsigned int line_number)
 	(*head)->next->n /= (*head)->n;
 	*head = (*head)->next;
 	(*head)->prev = NULL;
-	free_stack(stack);
+	free(stack);
 }
