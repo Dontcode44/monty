@@ -80,7 +80,7 @@ void _div(stack_t **head, unsigned int line_number)
 {
 	stack_t *tmp;
 
-	if (!*head || !(*head)->next)
+	if (!(*head) || !(*head)->next)
 	{
 		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
