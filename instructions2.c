@@ -76,7 +76,7 @@ void _mul(stack_t **head, unsigned int line_number)
  * @head: top of list
  * @line_number: line of command
  */
-void _div(stack_t **head, unsigned int line_number)
+void div(stack_t **head, unsigned int line_number)
 {
 	stack_t *tmp;
 
