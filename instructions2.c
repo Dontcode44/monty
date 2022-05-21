@@ -78,7 +78,8 @@ void _mul(stack_t **head, unsigned int line_number)
  */
 void _div(stack_t **head, unsigned int line_number)
 {
-	stack_t *tmp;
+	stack_t *tmp = NULL;
+	int divivide = 0;
 
 	if (!(*head) || !(*head)->next)
 	{
@@ -91,8 +92,7 @@ void _div(stack_t **head, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	tmp = *head;
-	(*head)->next->n /= (*head)->n;
-	*head = (*head)->next;
-	(*head)->prev = NULL;
-	free(tmp);
+	divivide = tmp->next->n / tmp->n;
+	tmp->next->n = divivide;
+	pop(head, line_number);
 }
