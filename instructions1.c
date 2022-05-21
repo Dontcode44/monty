@@ -50,7 +50,7 @@ void pall(stack_t **head, unsigned int line_number)
 
 /**
  * pint - Print the value at the top of the stack list.
- * @head: list into push.
+ * @stack: list into push.
  * @line_number: line number of the file.
  * Return: nothing.
  */
@@ -68,8 +68,8 @@ void pint(stack_t **stack, unsigned int line_number)
 
 /**
  * nop - Print the value at the top of the stack list.
- * @head: list into push.
  * @line_number: line number of the file.
+ * @stack: stack.
  * Return: nothing.
  */
 void nop(stack_t **stack, unsigned int line_number)
@@ -79,9 +79,8 @@ void nop(stack_t **stack, unsigned int line_number)
 }
 /**
  * pop - Function pop
- * @head:
- * @line_number:
- *  *
+ * @head: the stack
+ * @line_number: line number of the file
  */
 void pop(stack_t **head, unsigned int line_number)
 {

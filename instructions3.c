@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * mod - mod second node from top node
- * @h: top of list
+ * @head: top of list
  * @line_number: line of command
  */
 void mod(stack_t **head, unsigned int line_number)
