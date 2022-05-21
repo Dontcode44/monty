@@ -78,12 +78,12 @@ void _mul(stack_t **head, unsigned int line_number)
  */
 void _div(stack_t **head, unsigned int line_number)
 {
-	if (*head == NULL || (*head)->next == NULL)
+	if (!*head || !(*head)->next)
 	{
 		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	if ((*head)->n == 0 || (*head)->next->n == 0)
+	if ((*head)->next->n == 0)
 	{
 		fprintf(stderr, "L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
