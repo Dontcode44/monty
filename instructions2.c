@@ -38,7 +38,7 @@ void add(stack_t **head, unsigned int line_number)
 }
 
 /**
- * _sub - Substract the value of two nodes.
+ * sub - Substract the value of two nodes.
  * @head: header of the stack.
  * @line_number: number of lines.
  */
