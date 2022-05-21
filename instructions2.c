@@ -38,7 +38,7 @@ void add(stack_t **head, unsigned int line_number)
 }
 
 /**
- * sub - Substract the value of two nodes.
+ * _sub - Substract the value of two nodes.
  * @head: header of the stack.
  * @line_number: number of lines.
  */
@@ -55,7 +55,7 @@ void sub(stack_t **head, unsigned int line_number)
 }
 
 /**
- * mul - multiply second node and top node
+ * _mul - multiply second node and top node
  * @head: top of list
  * @line_number: line of command
  */
@@ -72,7 +72,7 @@ void _mul(stack_t **head, unsigned int line_number)
 	(*head)->prev = NULL;
 }
 /**
- * div - divide second node from top node
+ * _div - divide second node from top node
  * @head: top of list
  * @line_number: line of command
  */
