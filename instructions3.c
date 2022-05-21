@@ -4,7 +4,7 @@
  * @head: top of list
  * @line_number: line of command
  */
-void mod(stack_t **head, unsigned int line_number)
+void _mod(stack_t **head, unsigned int line_number)
 {
 	if (head == NULL || *head == NULL)
 	{

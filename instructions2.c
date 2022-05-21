@@ -59,7 +59,7 @@ void sub(stack_t **head, unsigned int line_number)
  * @head: top of list
  * @line_number: line of command
  */
-void mul(stack_t **head, unsigned int line_number)
+void _mul(stack_t **head, unsigned int line_number)
 {
 	if (*head == NULL || (*head)->next == NULL)
 	{
@@ -76,7 +76,7 @@ void mul(stack_t **head, unsigned int line_number)
  * @head: top of list
  * @line_number: line of command
  */
-void div(stack_t **head, unsigned int line_number)
+void _div(stack_t **head, unsigned int line_number)
 {
 	if (*head == NULL || (*head)->next == NULL)
 	{
